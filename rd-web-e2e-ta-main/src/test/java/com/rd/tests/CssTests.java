@@ -25,25 +25,25 @@ public class CssTests {
         driver.get(url);
     }
 
-    @Test
+    @Test(priority=1)
     public void openDemoQAPageTest() {
         String pageTitle = driver.getTitle();
         Assert.assertEquals(pageTitle,"DEMOQA");
     }
 
-    @Test
+    @Test(priority=2)
     public void clickButtons(){
         WebElement Buttons = driver.findElement(By.cssSelector("#item-4"));
         Buttons.click();
     }
 
-    @Test
+    @Test(priority=3)
     public void clickMeClick(){
-        WebElement clickMe = driver.findElement(By.cssSelector("#I548k"));
+        WebElement clickMe = driver.findElement(By.cssSelector("button#I548k"));
         clickMe.click();
     }
 
-    @Test
+    @Test(priority=4)
     public void read(){
         WebElement readText = driver.findElement(By.cssSelector("#dynamicClickMessage"));
         String text = readText.getText();
